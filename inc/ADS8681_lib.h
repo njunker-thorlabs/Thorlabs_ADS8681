@@ -66,16 +66,16 @@ protected:
 	int8_t _cs, _mosi, _miso, _sck, _nrst;
 
 	//Our own SPI transfer to facilitate different platforms
-	void Thorlabs_SPI_transfer(void *buf, size_t count) __attribute__((weak));
+	virtual void Thorlabs_SPI_transfer(void *buf, size_t count);
 
 	//User-implemented SPI begin function, if needed
-	void Thorlabs_SPI_begin() __attribute__((weak));
+	virtual void Thorlabs_SPI_begin();
 
 	//User-implemented SPI end function, if needed
-	void Thorlabs_SPI_end() __attribute__((weak));
+	virtual void Thorlabs_SPI_end();
 
 	//User-implemented SPI setup function, if needed
-	void Thorlabs_SPI_setup() __attribute__((weak));
+	virtual void Thorlabs_SPI_setup();
 	
 };
 
