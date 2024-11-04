@@ -55,17 +55,19 @@ public:
 	float FSR;
 	float lsb;
 
+	virtual ~Thorlabs_ADS8681(){}
+
 protected:
 
-	//write to a single register
+	//write to a single register.
 	void write_register(uint8_t addr, uint16_t data);
 
-	//read from a single register
+	//read from a single register.
 	uint16_t read_register(uint8_t addr, int32_t* out);
 	
 	int8_t _cs, _mosi, _miso, _sck, _nrst;
 
-	//Our own SPI transfer to facilitate different platforms
+	//Our own SPI transfer to facilitate different platforms.
 	virtual void Thorlabs_SPI_transfer(void *buf, size_t count);
 
 	//User-implemented SPI begin function, if needed
